@@ -16,3 +16,7 @@
     border-top: 2px solid theme('colors.gray-dark');
   }
 }
+
+html {
+  background-color: theme('colors.green');
+}

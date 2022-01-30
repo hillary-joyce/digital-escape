@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { Button, XIcon } from '../components'
+import { Button, XIcon, Input, ProgressBar, Container, Folder, Passcode } from '../components'
+import { useState } from 'react'
 
 export default function Home() {
+  const [value, setValue] = useState('');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,6 +17,13 @@ export default function Home() {
 
       <Button text="Hello world" />
       <Button icon={<XIcon />} />
+      <Input onChange={e => setValue(e.target.value)} value={value} />
+      <ProgressBar complete={30} total={60} />
+      <Container title='test' hasMenu>
+        Test
+      </Container>
+      <Folder />
+      <Passcode code="1234" openFolder={() => {}} />
     </div>
   )
 }
